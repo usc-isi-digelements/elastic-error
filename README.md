@@ -6,7 +6,7 @@ Example:
 ```html
     <elastic-error
       error="[[error]]"
-      message="{{message}}>
+      message="{{message}}">
     </elastic-error>
 ```
 
