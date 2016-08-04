@@ -1,0 +1,66 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+A polymer web component that computes an error message (string) for an elasticjs error (object).
+
+Example:
+
+        <elastic-error
+          error="[[error]]"
+          message="{{message}}>
+        </elastic-error>
+
+@demo demo/index.html
+-->
+
+<dom-module id="elastic-error">
+  <template></template>
+  <script>
+  (function() {
+    'use strict';
+
+    Polymer({
+      is: 'elastic-error',
+
+      properties: {
+        /**
+         * Elasticjs error object.
+         */
+        error: {
+          type: Object,
+          value: null
+        },
+
+        /**
+         * Computed error message.  Computes Unknown for unsupported errors.
+         * Supported errors:
+         * BadRequest, RequestTimeout
+         */
+        message: {
+          type: String,
+          value: '',
+          notify: true,
+          computed: 'computeErrorMessage(error)'
+        }
+      },
+
+      /**
+       * Computes and returns the string error message using the given elasticjs error object.
+       */
+      computeErrorMessage: function(error) {
+        if(error) {
+          var start = 'Error:  ';
+          if(error.displayName === 'BadRequest') {
+            return start + 'Bad Search Request';
+          }
+          if(error.displayName === 'RequestTimeout') {
+            return start + 'Search Request Timeout';
+          }
+          return start + 'Unknown';
+        }
+        return '';
+      }
+    });
+  })();
+  </script>
+</dom-module>

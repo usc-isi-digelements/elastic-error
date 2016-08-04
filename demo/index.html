@@ -1,0 +1,65 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../elastic-error.html">
+</head>
+
+<body unresolved>
+  <template is="dom-bind" id="demo">
+    <p>===== DEMO 1 =====</p>
+    <p>Error: (None)</p>
+
+    <elastic-error
+      error=""
+      message="{{message1}}">
+    </elastic-error>
+
+    <p>Error Message: [[message1]]</p>
+
+    <p>===== DEMO 2 =====</p>
+    <p>Error: Unsupported</p>
+
+    <elastic-error
+      error='{"displayName":"Unsupported"}'
+      message="{{message2}}">
+    </elastic-error>
+
+    <p>Error Message: [[message2]]</p>
+
+    <p>===== DEMO 3 =====</p>
+    <p>Error: BadRequest</p>
+
+    <elastic-error
+      error='{"displayName":"BadRequest"}'
+      message="{{message3}}">
+    </elastic-error>
+
+    <p>Error Message: [[message3]]</p>
+
+    <p>===== DEMO 4 =====</p>
+    <p>Error: RequestTimeout</p>
+
+    <elastic-error
+      error='{"displayName":"RequestTimeout"}'
+      message="{{message4}}">
+    </elastic-error>
+
+    <p>Error Message: [[message4]]</p>
+
+    <p>===== DONE =====</p>
+  </template>
+</body>
+</html>
