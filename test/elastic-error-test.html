@@ -75,6 +75,10 @@
         component.error = null;
         expect(component.message).to.equal('');
       });
+
+      test('does not have html content', function() {
+        expect(Polymer.dom(component.root).children.length).to.equal(0);
+      });
     });
   </script>
 </body>
