@@ -2,7 +2,7 @@
 
 A Polymer Element that computes an error message (string) for an elasticjs error (object).
 
-Example:
+### Example
 ```html
 <elastic-error
   error="[[error]]"
