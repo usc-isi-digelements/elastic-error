@@ -16,68 +16,68 @@
 
   <script>
     suite('elastic-error', function() {
-      var component;
+      var element;
 
       setup(function() {
-        component = fixture('elastic-error-fixture');
+        element = fixture('elastic-error-fixture');
       });
 
       test('sets defaults', function() {
-        expect(component.error).to.be.null;
+        expect(element.error).to.be.null;
       });
 
       test('error message defaults to none', function() {
-        expect(component.message).to.equal('');
+        expect(element.message).to.equal('');
       });
 
       test('bad request error', function() {
-        component.error = {
+        element.error = {
           displayName: 'BadRequest'
         };
-        expect(component.message).to.equal('Error:  Bad Search Request');
+        expect(element.message).to.equal('Error:  Bad Search Request');
       });
 
       test('timeout error', function() {
-        component.error = {
+        element.error = {
           displayName: 'RequestTimeout'
         };
-        expect(component.message).to.equal('Error:  Search Request Timeout');
+        expect(element.message).to.equal('Error:  Search Request Timeout');
       });
 
       test('unknown error', function() {
-        component.error = {
+        element.error = {
           displayName: 'AnError'
         };
-        expect(component.message).to.equal('Error:  Unknown');
+        expect(element.message).to.equal('Error:  Unknown');
       });
 
       test('no error', function() {
-        component.error = null;
-        expect(component.message).to.equal('');
+        element.error = null;
+        expect(element.message).to.equal('');
       });
 
       test('change from one error to another error', function() {
-        component.error = {
+        element.error = {
           displayName: 'BadRequest'
         };
-        expect(component.message).to.equal('Error:  Bad Search Request');
-        component.error = {
+        expect(element.message).to.equal('Error:  Bad Search Request');
+        element.error = {
           displayName: 'RequestTimeout'
         };
-        expect(component.message).to.equal('Error:  Search Request Timeout');
+        expect(element.message).to.equal('Error:  Search Request Timeout');
       });
 
       test('change from one error to no error', function() {
-        component.error = {
+        element.error = {
           displayName: 'BadRequest'
         };
-        expect(component.message).to.equal('Error:  Bad Search Request');
-        component.error = null;
-        expect(component.message).to.equal('');
+        expect(element.message).to.equal('Error:  Bad Search Request');
+        element.error = null;
+        expect(element.message).to.equal('');
       });
 
       test('does not have html content', function() {
-        expect(Polymer.dom(component.root).children.length).to.equal(0);
+        expect(Polymer.dom(element.root).children.length).to.equal(0);
       });
     });
   </script>

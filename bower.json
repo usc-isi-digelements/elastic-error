@@ -1,13 +1,14 @@
 {
   "name": "elastic-error",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     "Next Century Corporation"
   ],
-  "description": "",
+  "description": "A Polymer Element that computes an error message (string) for an elasticjs error (object).",
   "keywords": [
     "web-component",
-    "polymer"
+    "polymer",
+    "elastic.js"
   ],
   "main": "elastic-error.html",
   "license": "http://polymer.github.io/LICENSE.txt",
@@ -17,10 +18,10 @@
     "/test/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.2.0"
+    "polymer": "Polymer/polymer#^1.7.0"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "web-component-tester": "^4.0.0"
+    "iron-component-page": "PolymerElements/iron-component-page#^1.1.7",
+    "web-component-tester": "^5.0.0"
   }
 }
