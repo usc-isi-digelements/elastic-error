@@ -11,7 +11,7 @@
   ],
   "main": "elastic-error.html",
   "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "https://github.com/DigElements/elastic-error/",
+  "homepage": "https://github.com/usc-isi-digelements/elastic-error/",
   "ignore": [
     "/.*",
     "/test/"
